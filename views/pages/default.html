@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% include "pageMacros.html" %}
+
+{# the bodyClass block allows us to attach a classname to the body tag for easy style-scoping. #}
+{# be sure to call super() so that any pages inheriting this one will be appending classes, not overriding them. #}
+{% block bodyClass %}{{ super() }} default-page{% endblock %}
+
+{% block main %}
+  {{ aposArea(page, 'body') }}
+{% endblock %}

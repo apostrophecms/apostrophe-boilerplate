@@ -1,0 +1,7 @@
+{% extends "loginBase.html" %}
+
+{# Remove this file for production sites, and change the admin password in app.js #}
+{# The default version of login.html does not show any hints #}
+
+{% block usernameHint %}(hint: it's "admin"){% endblock %}
+{% block passwordHint %}(hint: it's "demo"){% endblock %}

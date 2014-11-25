@@ -1,0 +1,21 @@
+{
+  "name": "apostrophe-boilerplate",
+  "version": "0.5.0",
+  "description": "Minimal Apostrophe Boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/punkave/apostrophe-boilerplate"
+  },
+  "author": "P'unk Avenue",
+  "license": "BSD",
+  "dependencies": {
+    "apostrophe-editor-2": "0.5.x",
+    "apostrophe-site": "0.5.x",
+    "apostrophe-ui-2": "0.5.x",
+    "glob": "^4.2.1"
+  }
+}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{# HTML with typical page structure, not necessarily an apostrophe-pages page document #}
+
+{% block body %}
+  {% block adminBar %}
+    {% if doNotEdit %}
+      <div class="do-not-edit">
+        This is the staging version of this site. Any changes you make to the content should be for <strong>testing purposes only.</strong>
+      </div>
+    {% endif %}
+    {# For the public sandbox demo site we show a login link all the time, but usually this whole bar is hidden when logged out #}
+    {% if loginButton or aposCanEditSomething(permissions) %}
+      <div class="apos-admin-bar">
+        <div class="apos-admin-bar-inner">
+          <div class="apos-logo-tiny">
+            A
+          </div>
+
+          {# edit === can edit THIS page #}
+          {{ aposMediaMenu({ edit: permissions.guest })}}
+
+          {% if edit %}
+            <div class="apos-admin-bar-item apos-preview-toggle">
+              <i class="icon-eye"></i>
+              <i class="icon-wrench"></i>
+            </div>
+          {% endif %}
+
+          {% if user %}
+            <ul class="apos-admin-bar-item apos-accordion-menu apos-my-account">
+              <li class="apos-accordion-title"><i class="person"></i> My Account</li>
+              <li class="apos-accordion-items">
+                <ul class="apos-page-bar">
+                  {# Doesn't appear for hardcoded accounts that cannot be edited #}
+                  {% if user._mongodb and permissions.guest %}
+                    <li href="#" class="apos-control apos-accordion-item apos-button" data-profile-edit>My Profile</li>
+                    <li href="#" class="apos-control apos-accordion-item apos-button" data-password-change>{{ __('Change Password') }}</li>
+                    {% if user.email %}
+                      <li href="#" class="apos-control apos-accordion-item apos-button"><a href="/apos-people/reset-request">Reset Password</a></li>
+                    {% endif %}
+                  {% endif %}
+                  <li href="#" class="apos-control apos-accordion-item apos-button"><a href="/logout">Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          {% else %}
+              <div class="apos-admin-bar-item login-status">
+              <a class="apos-button " href="/login">Log In</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {{ aposPagesMenu({ contextMenu: contextMenu, page: page, bottom: true }) }}
+    {% endif %}
+  {% endblock %}
+
+  {# "Why are you doing this? Why not just have the inner layout extend the outer one?" #}
+  {# Because nunjucks doesn't yet support conditional extends and we want to support #}
+  {# AJAX refreshes of the main content area. -Tom #}
+
+  <div class="apos-refreshable" data-apos-refreshable>
+    {{ content }}
+  </div>
+
+{% endblock %}
