@@ -46,7 +46,10 @@ var site = require('apostrophe-site')({
   modules: {
     // Styles required by the new editor, must go FIRST
     'apostrophe-editor-2': {},
-    'apostrophe-ui-2': {}
+    'apostrophe-ui-2': {},
+    'apostrophe-browserify': {
+      files: ['./public/js/modules/_site.js']
+    }
   },
 
   // These are assets we want to push to the browser.
