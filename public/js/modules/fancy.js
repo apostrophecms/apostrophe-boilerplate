@@ -6,16 +6,12 @@
 // RIGHT
 //
 // // I work with content added later
-// $(function() {
-//   $('body').on('click', '.my-selector', function() { ... })
-// }
+// // $('body').on('click', '.my-selector', function() { ... })
 //
 // WRONG
 //
 // // I won't work with content added dynamically!
-// $(function() {
-//   $('.my-selector').click(function() { ... })
-// });
+// // $('.my-selector').click(function() { ... })
 //
 // If this doesn't work for your needs, listen for the 'aposReady'
 // event on the body element, and update your event handlers on other
@@ -34,7 +30,8 @@
 //     }
 //   });
 // });
-
-$(function() {
-
-});
+//
+//
+// Once you've written your masterpiece,
+// dont' forget to add the path to this file to _site.js!
+// Browserify will take it from there.
