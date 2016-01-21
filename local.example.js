@@ -26,23 +26,6 @@ module.exports = {
     loginButton: true
   },
 
-  // Want Twitter widgets to work? Go to dev.twitter.com and create an "app", then
-  // pop the key and secret here.
-
-  // This follows the same format as the modules we declare in app.js. You would
-  // do it here in order to keep sensitive data like keys and secrets out of your git repo.
-  // Note: if you plan on using twitter, don't forget to include the apostrophe-twitter module
-  // in app.js!
-
-  'apostrophe-twitter': {
-    consumerKey: 'xxxx',
-    consumerSecret: 'yyyy',
-    // Click "Create my access token" on dev.twitter.com to generate these.
-    // You may need to refresh the page before the token actually appears there.
-    accessToken: 'zzzz',
-    accessTokenSecret: 'aaaa'
-  },
-
   // Set to true for full CSS and JS minify, on staging and production servers
   minify: false,
   // If these are your db settings then you don't need to be explicit. If not
@@ -54,5 +37,3 @@ module.exports = {
     // mongodb://user:password@host:port/dbname
   }
 };
-
-
