@@ -1,6 +1,6 @@
 {
   "name": "apostrophe-boilerplate",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Minimal Apostrophe Boilerplate",
   "main": "app.js",
   "scripts": {
@@ -11,11 +11,8 @@
     "url": ""
   },
   "author": "P'unk Avenue",
-  "license": "BSD",
+  "license": "MIT",
   "dependencies": {
-    "apostrophe-browserify": "^0.5.5",
-    "apostrophe-editor-2": "0.5.x",
-    "apostrophe-site": "0.5.x",
-    "apostrophe-ui-2": "0.5.x"
+    "apostrophe": "punkave/apostrophe#unstable"
   }
 }
