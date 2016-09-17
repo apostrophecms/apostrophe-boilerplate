@@ -1,6 +1,6 @@
 {
   "name": "apostrophe-boilerplate",
-  "version": "0.6.0",
+  "version": "2.0.0",
   "description": "Minimal Apostrophe Boilerplate",
   "main": "app.js",
   "scripts": {
@@ -13,6 +13,6 @@
   "author": "P'unk Avenue",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "punkave/apostrophe#unstable"
+    "apostrophe": "^2.0.0"
   }
 }
