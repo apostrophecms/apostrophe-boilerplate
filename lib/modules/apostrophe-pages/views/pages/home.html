@@ -1,6 +1,12 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in lib/modules/apostrophe-templates/views/outerLayout.html
+#}
+
 {% extends data.outerLayout %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{{ super() }} | Home{% endblock %}
+
 {% block main %}
   <div class="main-content">
     <h3>Hello world!

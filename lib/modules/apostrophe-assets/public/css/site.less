@@ -1,13 +1,10 @@
 @import "utils/reset.less";
 
-body
-{
-  .karla;
-  background-color: @apos-light
-}
+// Delete the boilerplate CSS below when you are ready to dive in and customize your sites:
+body { background-color: @apos-light; }
 
-.main-content
-{
+.main-content {
+  font-family: 'Karla', sans-serif;
   margin: 200px auto;
   padding: 20px;
   max-width: 500px;
@@ -15,22 +12,22 @@ body
   background-color: @apos-primary;
   .apos-drop-shadow;
 
-  // Basic styles needed so we don't get bug reports on the rich text editor. -Tom
-
-  h3 { font-size: 24px; margin-bottom: 12px; }
-
-  h4 { font-size: 20px; margin-bottom: 10px; }
-
-  strong {
-    font-weight: bold;
-  }
-
-  em {
-    font-style: italic;
-  }
-
   .login-link {
     float: right;
     color: @apos-white;
   }
+
+  // Basic rich-text editor styles:
+  h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  strong { font-weight: bold; }
+  em { font-style: italic; }
 }
