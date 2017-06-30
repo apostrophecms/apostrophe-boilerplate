@@ -1,0 +1,37 @@
+{#
+  An empty global layout to be extended by your page templates. This file extends
+  Apostrophe's outerLayoutBase template, which we don't recommend overriding, unless
+  you're a pro!
+#}
+
+{% extends "outerLayoutBase.html" %}
+
+{% block title %}Apostrophe Boilerplate{% endblock %}
+
+{% block extraHead %}
+  {#
+    This block outputs its contents in the HTML document's <head>.
+    It is a good place to put <script> <link> and <meta> tags.
+  #}
+{% endblock %}
+
+{% block beforeMain %}
+  {#
+    We recommend you use the beforeMain block for global page components
+    like headers or navigation.
+  #}
+{% endblock %}
+
+{% block main %}
+  {#
+    Usually, your page templates in the apostrophe-pages module will override
+    this block. It's safe to assume this is where your page-specific content
+    should go.
+  #}
+{% endblock %}
+
+{% block afterMain %}
+  {#
+    This would be a great place to put a footer.
+  #}
+{% endblock %}
