@@ -1,3 +1,5 @@
+# Don't let new projects be born out of date
+package-lock.json
 locales
 npm-debug.log
 data
