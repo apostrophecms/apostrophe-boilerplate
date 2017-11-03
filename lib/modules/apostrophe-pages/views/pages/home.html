@@ -1,11 +1,9 @@
 {#
   This is an example home page template. It inherits and extends a layout template
-  that lives in lib/modules/apostrophe-templates/views/outerLayout.html
+  that lives in the top-level views/ folder for convenience
 #}
 
-{% extends data.outerLayout %}
-
-{% block title %}{{ super() }} | Home{% endblock %}
+{% extends "layout.html" %}
 
 {% block main %}
   <div class="main-content">
@@ -14,6 +12,6 @@
         <a class="login-link" href="/login">Login</a>
       {% endif %}
     </h3>
-    <p>This is a very barebones Apostrophe project. Now, get to work and make a real website!</p>
+    <p>This is a very bare bones Apostrophe project. Now, get to work and make a real website!</p>
   </div>
 {% endblock %}
