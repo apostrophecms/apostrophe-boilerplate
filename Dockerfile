@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:carbon
 
 # Create app directory
 RUN mkdir -p /app
