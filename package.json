@@ -14,5 +14,17 @@
   "license": "MIT",
   "dependencies": {
     "apostrophe": "^2.47.0"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+      "locales/*.json",
+      "public/modules",
+      "public/uploads",
+      "public/apos-minified",
+      "public/css/master-*.less",
+      "data"
+    ],
+    "ext": "json, js, html, less"
   }
 }
