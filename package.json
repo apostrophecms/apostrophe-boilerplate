@@ -19,9 +19,10 @@
     "verbose": true,
     "ignore": [
       "locales/*.json",
-      "public/modules",
+      "public/modules/**/*.less",
+      "public/modules/**/*.js",
       "public/uploads",
-      "public/apos-minified",
+      "public/apos-minified/*.js",
       "public/css/master-*.less",
       "data"
     ],
