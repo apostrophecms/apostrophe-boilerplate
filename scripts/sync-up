@@ -28,17 +28,19 @@ dbName=$PROJECT
 projectName=$PROJECT
 
 #Enter the SSH username/url for the remote server.
-remoteSSH=$USER@$SERVER
+remoteSSH="-p $SSH_PORT $USER@$SERVER"
+rsyncTransport="ssh -p $SSH_PORT"
+rsyncDestination="$USER@$SERVER"
 
 echo "Syncing MongoDB"
 mongodump -d $dbName -o /tmp/mongodump.$dbName &&
-rsync -av  /tmp/mongodump.$dbName/ $remoteSSH:/tmp/mongodump.$dbName  &&
+echo rsync -av -e "$rsyncTransport" /tmp/mongodump.$dbName/ $rsyncDestination:/tmp/mongodump.$dbName &&
+rsync -av -e "$rsyncTransport" /tmp/mongodump.$dbName/ $rsyncDestination:/tmp/mongodump.$dbName &&
 rm -rf /tmp/mongodump.$dbName &&
 # noIndexRestore increases compatibility between 3.x and 2.x,
 # and Apostrophe will recreate the indexes correctly at startup
 ssh $remoteSSH mongorestore --noIndexRestore --drop -d $dbName /tmp/mongodump.$dbName/$dbName &&
 echo "Syncing Files" &&
-rsync -av --delete ./public/uploads/ $remoteSSH:/opt/stagecoach/apps/$projectName/uploads &&
+rsync -av --delete -e "$rsyncTransport" ./public/uploads/ $rsyncDestination:/opt/stagecoach/apps/$projectName/uploads &&
 echo "Synced up to $TARGET"
-
 echo "YOU MUST RESTART THE SITE ON $TARGET TO REBUILD THE MONGODB INDEXES."
