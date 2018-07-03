@@ -5,7 +5,7 @@ var apos = require('apostrophe')({
 
   // See lib/modules for basic project-level configuration of our modules
   // responsible for serving static assets, managing page templates and
-  // configuring user acounts.
+  // configuring user accounts.
 
   modules: {
 
