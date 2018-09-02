@@ -18,6 +18,7 @@
   "nodemonConfig": {
     "verbose": true,
     "ignore": [
+      "lib/modules/*/public/js/*.js",
       "locales/*.json",
       "public/modules/**/*.less",
       "public/modules/**/*.js",
