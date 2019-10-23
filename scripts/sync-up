@@ -3,7 +3,7 @@
 TARGET="$1"
 DB="$2"
 if [ -z "$TARGET" ]; then
-  echo "Usage: ./scripts/sync-up production"
+  echo "Usage: ./scripts/sync-up production [dbname]"
   echo "(or as appropriate)"
   echo
   echo "THIS WILL CLOBBER EVERYTHING ON THE"
@@ -26,7 +26,6 @@ source "deployment/settings.$TARGET" || exit 1
 if [ -z "$db" ]; then
   dbName=$PROJECT
 else
-  echo "hola"
   dbName=$DB
 fi
 

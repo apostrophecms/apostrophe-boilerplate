@@ -3,7 +3,7 @@
 TARGET="$1"
 DB="$2"
 if [ -z "$TARGET" ]; then
-  echo "Usage: ./scripts/sync-down production"
+  echo "Usage: ./scripts/sync-down production [dbname]"
   echo "(or as appropriate)"
   exit 1
 fi
