@@ -23,7 +23,7 @@ source deployment/settings || exit 1
 source "deployment/settings.$TARGET" || exit 1
 
 #Enter the Mongo DB name (should be same locally and remotely).
-if [ -z "$db" ]; then
+if [ -z "$DB" ]; then
   dbName=$PROJECT
 else
   dbName=$DB
