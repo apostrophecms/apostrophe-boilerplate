@@ -15,7 +15,6 @@ source "deployment/settings.$TARGET" || exit 1
 if [ -z "$db" ]; then
   dbName=$PROJECT
 else
-  echo "hola"
   dbName=$DB
 fi
 
