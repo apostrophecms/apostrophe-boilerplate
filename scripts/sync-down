@@ -1,7 +1,6 @@
 #!/bin/bash
 
 TARGET="$1"
-DB="$2"
 if [ -z "$TARGET" ]; then
   echo "Usage: ./scripts/sync-down production [dbname]"
   echo "(or as appropriate)"
@@ -12,10 +11,10 @@ source deployment/settings || exit 1
 source "deployment/settings.$TARGET" || exit 1
 
 #Enter the Mongo DB name (should be same locally and remotely).
-if [ -z "$DB" ]; then
+if [ -z "$APOS_DATABASE_NAME" ]; then
   dbName=$PROJECT
 else
-  dbName=$DB
+  dbName=$APOS_DATABASE_NAME
 fi
 
 #Enter the Project name (should be what you called it for stagecoach).
