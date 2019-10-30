@@ -2,7 +2,7 @@
 
 TARGET="$1"
 if [ -z "$TARGET" ]; then
-  echo "Usage: ./scripts/sync-up production"
+  echo "Usage: ./scripts/sync-up production [dbname]"
   echo "(or as appropriate)"
   echo
   echo "THIS WILL CLOBBER EVERYTHING ON THE"
@@ -22,7 +22,11 @@ source deployment/settings || exit 1
 source "deployment/settings.$TARGET" || exit 1
 
 #Enter the Mongo DB name (should be same locally and remotely).
-dbName=$PROJECT
+if [ -z "$APOS_DATABASE_NAME" ]; then
+  dbName=$PROJECT
+else
+  dbName=$APOS_DATABASE_NAME
+fi
 
 #Enter the Project name (should be what you called it for stagecoach).
 projectName=$PROJECT
