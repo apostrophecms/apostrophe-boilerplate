@@ -15,3 +15,46 @@ Now you're all set! Just run `node app.js` to start up the local server and head
 ---------------
 
 For more documentation on Apostrophe, visit the [A2 documentation site](http://apostrophecms.com).
+
+## Getting started with Docker
+
+If you prefer, you can run Apostrophe inside a Docker container with the provided configuration in `Dockerfile` and `docker-compose.yml`:
+
+1. Install Docker on your computer, of course. On MacOS you must install the official Docker Desktop, not homebrew, as the latter relies on virtualbox and virtualbox file sharing is not compatible with persisting a MongoDB database in a container. If this is your first time, **Be sure to actually launch Docker Desktop** before running the commands that follow.
+
+2. Type:
+
+```bash
+docker-compose up
+```
+
+3. When you see:
+
+```
+Listening at http://localhost:3000
+```
+
+You can connect normally in your browser by going to that address.
+
+4. You will note there is no `admin` account in the database yet. Let's fix that:
+
+```bash
+docker ps
+```
+
+Note the id of the `apostrophe` container. The id is a string like: `319baf76fe74`
+
+Then execute a command inside your container:
+
+```
+docker exec -it YOUR_ID_HERE node app apostrophe-users:add admin admin
+```
+
+You can shut Apostrophe down at any time with:
+
+```bash
+docker-compose stop
+```
+
+When you start it up again, your uploaded files and your database will still be there.
+

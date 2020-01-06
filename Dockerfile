@@ -1,16 +1,7 @@
-FROM node:carbon
-
-# Create app directory
-RUN mkdir -p /app
+FROM node:current
 WORKDIR /app
-
-# Bundle app source
-COPY . /app
+COPY package.json /app
 RUN npm install
-
-# Mount persistent storage
-VOLUME /app/data
-VOLUME /app/public/uploads
-
+COPY . /app
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "./scripts/wait-for-it.sh", "mongo:27017", "--", "npm", "start" ]
