@@ -36,18 +36,10 @@ Listening at http://localhost:3000
 
 You can connect normally in your browser by going to that address.
 
-4. You will note there is no `admin` account in the database yet. Let's fix that:
-
-```bash
-docker ps
-```
-
-Note the id of the `apostrophe` container. The id is a string like: `319baf76fe74`
-
-Then execute a command inside your container:
+4. You will note there is no `admin` account in the database yet. Let's fix that. We'll execute an Apostrophe command line task inside the container:
 
 ```
-docker exec -it YOUR_ID_HERE node app apostrophe-users:add admin admin
+docker-compose exec apostrophe node app apostrophe-users:add admin admin
 ```
 
 You can shut Apostrophe down at any time with:
