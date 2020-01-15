@@ -18,7 +18,9 @@ For more documentation on Apostrophe, visit the [A2 documentation site](http://a
 
 ## Getting started with Docker
 
-If you prefer, you can run Apostrophe inside a Docker container with the provided configuration in `Dockerfile` and `docker-compose.yml`:
+If you prefer, you can run Apostrophe inside a Docker container with the provided configuration in `Dockerfile` and `docker-compose.yml`.
+
+**These aren't meant to be perfect for all situations.** As written, they are well-suited to running Apostrophe and MongoDB under docker in a single-server environment. For a development environment, you would probably want the entire folder to be in a mounted volume so that your code changes are visible as you go along, and you would probably want to work `nodemon`, `webpack` or `apostrophe-monitor` into the mix for automatic reloading.
 
 1. Install Docker on your computer, of course. On MacOS you must install the official Docker Desktop, not homebrew, as the latter relies on virtualbox and virtualbox file sharing is not compatible with persisting a MongoDB database in a container. If this is your first time, **Be sure to actually launch Docker Desktop** before running the commands that follow.
 
