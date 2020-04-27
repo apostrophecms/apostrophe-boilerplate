@@ -10,7 +10,7 @@
     "type": "git",
     "url": ""
   },
-  "author": "P'unk Avenue",
+  "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
     "apostrophe": "^2.103.1"
