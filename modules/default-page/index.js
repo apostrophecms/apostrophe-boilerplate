@@ -1,6 +1,7 @@
 module.exports = {
+  extend: '@apostrophecms/page-type',
   options: {
-    label: 'Home Page'
+    label: 'Default Page'
   },
   fields: {
     add: {

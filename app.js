@@ -28,6 +28,11 @@ require('apostrophe')({
         className: 'bp-rich-text'
       }
     },
+    '@apostrophecms/image-widget': {
+      options: {
+        className: 'bp-image-widget'
+      }
+    },
     '@apostrophecms/video-widget': {
       options: {
         className: 'bp-video'
@@ -51,7 +56,8 @@ require('apostrophe')({
     },
 
     // A home for our own project-specific javascript and SASS assets
-    asset: {}
+    asset: {},
+    'default-page': {}
 
   }
 });
