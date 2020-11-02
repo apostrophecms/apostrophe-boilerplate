@@ -5,8 +5,7 @@
 data
 temp
 public/uploads
-public/modules
-public/apos-minified
+public/apos-frontend
 .git
 .gitignore
 # We don't deploy these anymore, instead we always 'npm install' to ensure

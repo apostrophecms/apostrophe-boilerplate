@@ -1,22 +1,37 @@
 {
   "name": "apostrophe-boilerplate",
-  "version": "2.0.0",
-  "description": "Minimal Apostrophe Boilerplate",
+  "version": "3.0.0-prealpha",
+  "description": "Apostrophe 3 Boilerplate Site",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "build": "webpack && npm run apostrophe-build",
+    "apostrophe-build": "node app @apostrophecms/asset:build",
+    "start": "node app",
+    "dev": "nodemon --delay 1000ms -x \"npm run build && nodemon app.js\""
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/apostrophecms/apostrophe-boilerplate"
   },
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.103.1"
+    "apostrophe": "apostrophecms/apostrophe#3.0",
+    "bootstrap": "^4.5.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "nodemonConfig": {
     "verbose": true,
+    "watch": [
+      "./app.js",
+      "./modules/**/*",
+      "./src/**/*",
+      "./node_modules/apostrophe/modules/@apostrophecms/**/*"
+    ],
+    "ignoreRoot": [
+      ".git"
+    ],
     "ignore": [
       "lib/modules/*/public/js/*.js",
       "locales/*.json",
@@ -25,8 +40,23 @@
       "public/uploads",
       "public/apos-minified/*.js",
       "public/css/master-*.less",
+      "modules/asset/ui/public/site.js",
       "data"
     ],
-    "ext": "json, js, html, less"
+    "ext": "json, js, html, scss, vue"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "eslint": "^7.8.0",
+    "eslint-config-apostrophe": "^3.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "node-dev": "^5.2.0",
+    "nodemon": "^2.0.4",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1"
   }
 }

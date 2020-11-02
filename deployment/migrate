@@ -2,7 +2,9 @@
 
 # Run any necessary database migration tasks that should happen while the
 # site is paused here.
+#
+# We don't have any, 3.x policy is safe migrations only. -Tom
 
-node app apostrophe-migrations:migrate
-
-echo "Site migrated"
+# node app @apostrophecms/migration:migrate
+#
+#echo "Site migrated"
