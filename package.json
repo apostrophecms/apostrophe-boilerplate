@@ -5,10 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
-    "build": "webpack",
-    "dev": "nodemon --delay 1000ms -x \"webpack && nodemon app.js\"",
-    "dev-build": "webpack && node app @apostrophecms/asset:build",
-    "core-dev": "nodemon --delay 1000ms -x \"npm run dev-build && nodemon app.js\""
+    "build": "webpack && node app @apostrophecms/asset:build",
+    "dev": "nodemon --delay 1000ms -x \"npm run build && nodemon app.js\""
   },
   "repository": {
     "type": "git",
