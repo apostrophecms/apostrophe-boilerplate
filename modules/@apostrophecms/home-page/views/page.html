@@ -6,5 +6,33 @@
 {% extends "layout.html" %}
 
 {% block main %}
-  {% area data.page, 'main' %}
+  <section class="bp-welcome">
+    <img class="bp-welcome__logo" src="/images/logo.png" alt="ApostropheCMS logo">
+    <h1>Welcome to Apostrophe 3 - alpha</h1>
+    {% if not data.user %}
+      {# Message only for logged out users. #}
+      <p>
+        <strong>First time spinning up the ApostropheCMS 3 demo?</strong> Run this in your CLI to create your first user: <code>node app @apostrophecms/user:add admin admin</code>. <a href="/login">Then log in here</a>.
+      </p>
+    {% endif %}
+    <p>
+      For a guide on how to configure and customize this project, <a href="https://a3-docs.apostrophecms.org/">please check out the Apostrophe 3 documentation</a>.
+    </p>
+    <h2>Essential Links</h2>
+    <ul class="bp-welcome__links">
+      <li><a href="https://chat.apostrophecms.com/" target="_blank">Discord</a></li>
+      <li><a href="https://github.com/apostrophecms/apostrophe/tree/3.0" target="_blank">Github (3.0 branch)</a></li>
+      <li><a href="https://twitter.com/apostrophecms" target="_blank">Twitter</a></li>
+      <li><a href="forum.apostrophecms.org/" target="_blank">Forum</a></li>
+    </ul>
+    <div class="bp-welcome__area">
+    </div>
+    {% if data.user %}
+      {# Message only for logged in users. #}
+      <p>
+        Add and edit content below in the content area. 👇
+      </p>
+    {% endif %}
+    {% area data.page, 'main' %}
+  </section>
 {% endblock %}

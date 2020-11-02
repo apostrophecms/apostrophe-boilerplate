@@ -25,7 +25,12 @@ require('apostrophe')({
     // Custom CSS classes for standard apostrophe widgets
     '@apostrophecms/rich-text-widget': {
       options: {
-        className: 'a3-widget-rte'
+        className: 'bp-rich-text'
+      }
+    },
+    '@apostrophecms/video-widget': {
+      options: {
+        className: 'bp-video'
       }
     },
     // Manages apostrophe's overall asset pipeline

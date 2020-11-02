@@ -1,0 +1,29 @@
+.bp-welcome {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.bp-welcome__logo {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  margin: 40px auto;
+}
+
+.bp-welcome__links {
+  padding-left: 0px;
+  list-style: none;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  li:last-child { margin-right: 0; }
+}
+
+.bp-welcome__area {
+  margin-top: 40px;
+}

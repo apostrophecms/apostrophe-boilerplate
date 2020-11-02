@@ -2,5 +2,4 @@
 import './index.scss';
 
 // Your own project level JS may go here
-
-console.log('test');
+console.log('Hello World');

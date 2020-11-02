@@ -1,0 +1,27 @@
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+a {
+  color: $color-purple;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $color-purple-light;
+  }
+}
+
+::selection {
+  background-color: $color-gold;
+}
+
+code {
+  background-color: $color-green;
+}

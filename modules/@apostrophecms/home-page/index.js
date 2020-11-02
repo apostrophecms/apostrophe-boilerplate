@@ -34,7 +34,8 @@ module.exports = {
                   label: 'Heading 4 (H4)'
                 }
               ]
-            }
+            },
+            '@apostrophecms/video': {}
           }
         }
       }

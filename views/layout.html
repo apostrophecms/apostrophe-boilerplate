@@ -17,13 +17,14 @@
 {% endblock %}
 
 {% block beforeMain %}
-  <header>
+<div class="bp-wrapper">
+  <header class="bp-header">
+    <nav class="bp-nav"></nav>
     {% if not data.user %}
-      <a class="login-link" href="/login">Login</a>
+      <a class="bp-header__login" href="/login">Login</a>
     {% endif %}
-    <h1>{{ title }}</h1>
   </header>
-  <main>
+  <main class="bp-main">
 {% endblock %}
 
 {% block main %}
@@ -36,7 +37,8 @@
 
 {% block afterMain %}
   </main>
-  <footer>
+  <footer class="bp-footer">
     <a href="https://apostrophecms.com/">About ApostropheCMS</a>
   </footer>
+</div>{# Close .bp-wrapper #}
 {% endblock %}

@@ -4,10 +4,11 @@
   "description": "Apostrophe 3 Boilerplate Site",
   "main": "app.js",
   "scripts": {
-    "build": "webpack && npm run apostrophe-build",
-    "apostrophe-build": "node app @apostrophecms/asset:build",
     "start": "node app",
-    "dev": "nodemon --delay 1000ms -x \"npm run build && nodemon app.js\""
+    "build": "webpack",
+    "dev": "nodemon --delay 1000ms -x \"webpack && nodemon app.js\"",
+    "dev-build": "webpack && node app @apostrophecms/asset:build",
+    "core-dev": "nodemon --delay 1000ms -x \"npm run dev-build && nodemon app.js\""
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "apostrophe": "apostrophecms/apostrophe#3.0",
-    "bootstrap": "^4.5.2",
+    "normalize.css": "^8.0.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
