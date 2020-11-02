@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app",
     "build": "webpack && node app @apostrophecms/asset:build",
-    "dev": "nodemon --delay 1000ms -x \"npm run build && nodemon app.js\""
+    "dev": "nodemon --delay 1000ms -x \"npm run build && nodemon app.js\"",
+    "storybook": "node app @apostrophecms/storybook:run"
   },
   "repository": {
     "type": "git",
