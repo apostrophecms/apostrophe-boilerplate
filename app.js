@@ -21,7 +21,7 @@ var apos = require('apostrophe')({
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
     // Add an alt field to images schema, by default the title is used but
-    // we recommend to use the alt one with this option for more clarity.
+    // we recommend enabling the alt field for clarity.
     'apostrophe-images': {
       enableAltField: true
     },
