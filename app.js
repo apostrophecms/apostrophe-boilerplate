@@ -13,7 +13,6 @@ var apos = require('apostrophe')({
 
     // Note: most configuration occurs in the respective
     // modules' directories. See lib/apostrophe-assets/index.js for an example.
-
     // However any modules that are not present by default in Apostrophe must at
     // least have a minimal configuration here: `moduleName: {}`
 
@@ -21,8 +20,8 @@ var apos = require('apostrophe')({
     // `views/` folder of the project
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
-    // Add an alt field to images, by default the title is used but
-    // we recommend using the alt one with this options for more clarity.
+    // Add an alt field to images schema, by default the title is used but
+    // we recommend to use the alt one with this option for more clarity.
     'apostrophe-images': {
       enableAltField: true
     },
