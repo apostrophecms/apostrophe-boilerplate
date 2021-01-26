@@ -22,7 +22,7 @@ var apos = require('apostrophe')({
     'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
 
     // Add an alt field to images, by default the title is used but
-    // we recommend using the alt one with the option enableAltField.
+    // we recommend using the alt one with this options for more clarity.
     'apostrophe-images': {
       enableAltField: true
     },
