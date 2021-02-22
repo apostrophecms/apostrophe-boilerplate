@@ -1,6 +1,12 @@
-var path = require('path');
+const path = require('path');
 
-var apos = require('apostrophe')({
+// pm2-runtime is great at running node apps inside containers properly,
+// but its arguments can be mistaken for a command line Apostrophe task
+if (process.argv.find(arg => arg.match(/ProcessContainer/))) {
+  process.argv = [ process.argv[0], 'app.js' ];
+}
+
+const apos = require('apostrophe')({
   shortName: 'apostrophe-boilerplate',
 
   // See lib/modules for basic project-level configuration of our modules

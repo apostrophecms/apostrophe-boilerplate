@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./scripts/docker-wait-for-port mongo:27017 &&
+# Always run at least 2 processes for availability during process restarts. You can increase
+# this number if you wish to take advantage of more than 2 cores.
+pm2-runtime -i 2 start app.js

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+tar -zxf backups/content.tar.gz &&
+mongorestore $APOS_MONGODB_URI --drop &&
+rm -rf dump

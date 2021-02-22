@@ -1,7 +1,6 @@
 version: "2"
 services:
   apostrophe:
-    container_name: apostrophe
     restart: always
     build: .
     ports:
@@ -10,12 +9,12 @@ services:
       - mongo
     volumes:
       - ./data/uploads:/app/public/uploads
+      - ./data/backups:/app/backups
     environment:
       - APOS_MONGODB_URI=mongodb://mongo:27017/db
     depends_on:
       - mongo
   mongo:
-    container_name: mongo
     image: mongo
     restart: always
     volumes:

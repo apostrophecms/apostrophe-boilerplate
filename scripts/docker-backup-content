@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mongodump --quiet $APOS_MONGODB_URI &&
+tar -zcf backups/content.tar.gz dump data/uploads &&
+rm -rf dump
+
+
