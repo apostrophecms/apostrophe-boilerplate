@@ -4,6 +4,7 @@
   "description": "Minimal Apostrophe Boilerplate",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "build": "node app apostrophe:generation",
     "docker-backup-content": "docker-compose exec apostrophe ./scripts/docker-backup-content",
     "docker-restore-content": "docker-compose exec apostrophe ./scripts/docker-restore-content"
