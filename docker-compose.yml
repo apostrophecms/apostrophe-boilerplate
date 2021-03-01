@@ -5,8 +5,6 @@ services:
     build: .
     ports:
       - "3000:3000"
-    links:
-      - mongo
     volumes:
       - ./data/uploads:/app/public/uploads
       - ./data/backups:/app/backups
@@ -15,7 +13,7 @@ services:
     depends_on:
       - mongo
   mongo:
-    image: mongo
+    image: mongo:4.4
     restart: always
     volumes:
       - ./data/db:/data/db
