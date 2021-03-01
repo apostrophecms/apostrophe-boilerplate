@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/apostrophecms/apostrophe-boilerplate"
+    "url": ""
   },
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "github:apostrophecms/apostrophe#ensure-group-race-condition"
+    "apostrophe": "^2.116.0"
   },
   "nodemonConfig": {
     "verbose": true,
