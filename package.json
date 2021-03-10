@@ -16,7 +16,7 @@
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "github:apostrophecms/apostrophe"
+    "apostrophe": "^2.116.1"
   },
   "nodemonConfig": {
     "verbose": true,
