@@ -1,20 +1,22 @@
-@import "utils/reset.less";
+$white: #ffffff;
+$light: #eeeeee;
+$primary: #00BF9A;
+
 
 // Delete the boilerplate CSS below when you are ready to dive in and customize your sites:
-body { background-color: @apos-light; }
+body { background-color: $light; }
 
 .main-content {
   font-family: 'Karla', sans-serif;
   margin: 200px auto;
   padding: 20px;
   max-width: 500px;
-  color: @apos-white;
-  background-color: @apos-primary;
-  .apos-drop-shadow;
+  color: $white;
+  background-color: $primary;
 
   .login-link {
     float: right;
-    color: @apos-white;
+    color: $white;
   }
 
   // Basic rich-text editor styles:
