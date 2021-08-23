@@ -1,11 +1,13 @@
 {
   "name": "apostrophe-boilerplate",
   "version": "2.0.0",
-  "description": "Minimal Apostrophe Boilerplate",
+  "description": "Minimal Apostrophe Boilerplate Plus Webpack",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "node app apostrophe:generation",
+    "dev": "webpack serve & npm start",
+    "build": "NODE_ENV=production webpack && NODE_ENV=production APOS_MINIFY=1 node app apostrophe:generation",
+    "serve": "NODE_ENV=production APOS_MINIFY=1 node app.js",
     "docker-backup-content": "docker-compose exec apostrophe ./scripts/docker-backup-content",
     "docker-restore-content": "docker-compose exec apostrophe ./scripts/docker-restore-content"
   },
@@ -16,7 +18,17 @@
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.116.1"
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "apostrophe": "^2.116.1",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.1.0",
+    "sass": "^1.35.2",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   },
   "nodemonConfig": {
     "verbose": true,

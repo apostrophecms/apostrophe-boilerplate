@@ -13,10 +13,10 @@
 {% endblock %}
 
 {% block extraHead %}
-  {#
-    This block outputs its contents in the HTML document's <head>.
-    It is a good place to put extra <script> <link> and <meta> tags.
-  #}
+  {% if data.isDev %}
+    {# For webpack live reload #}
+    <link href="http://localhost:9002/wp/site.css" rel="stylesheet" />
+  {% endif %}
 {% endblock %}
 
 {% block beforeMain %}
@@ -38,4 +38,11 @@
   {#
     This would be a great place to put a global footer.
   #}
+{% endblock %}
+
+{% block extraBody %}
+  {# For webpack live reload #}
+  {% if data.isDev %}
+    <script src="http://localhost:9002/wp/site.js"></script>
+  {% endif %}
 {% endblock %}
