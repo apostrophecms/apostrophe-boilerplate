@@ -31,5 +31,21 @@ const apos = require('apostrophe')({
     'apostrophe-images': {
       enableAltField: true
     },
+    'apostrophe-login': {
+      throttle: {
+        allowedAttempts: 3,
+        perMinutes: 1,
+        lockoutMinutes: 120,
+      }
+    },
+    'apostrophe-workflow': {
+      // IMPORTANT: if you follow the examples below,
+      // be sure to set this so the templates work
+      alias: 'workflow',
+      // Recommended to save database space. You can still
+      // export explicitly between locales
+      replicateAcrossLocales: false,
+    },
+    'apostrophe-workflow-modified-documents': {}
   }
 });
